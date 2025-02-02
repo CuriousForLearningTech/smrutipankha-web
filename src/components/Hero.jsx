@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Typewriter from "typewriter-effect";
 import { Tilt } from "react-tilt";
-import { motion } from "framer-motion";
 
 const HeroContainer = styled.div`
   display: flex;
