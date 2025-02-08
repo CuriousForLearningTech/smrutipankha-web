@@ -1,242 +1,94 @@
 import React from "react";
-import styled from "styled-components";
 import Typewriter from "typewriter-effect";
-import { Tilt } from "react-tilt";
 
-const HeroContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  position: relative;
-  padding: 80px 30px;
-  z-index: 1;
-
-  @media (max-width: 960px) {
-    padding: 66px 16px;
-  }
-
-  @media (max-width: 640px) {
-    padding: 32px 16px;
-  }
-
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
-`;
-const HeroInnerContainer = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1100px;
-
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
-`;
-const HeroLeftContainer = styled.div`
-  width: 100%;
-  order: 1;
-  @media (max-width: 960px) {
-    order: 2;
-    margin-bottom: 30px;
-    display: flex;
-    gap: 6px;
-    flex-direction: column;
-    align-items: center;
-  }
-`;
-const HeroRightContainer = styled.div`
-  width: 100%;
-  order: 2;
-  display: flex;
-  justify-content: end;
-  @media (max-width: 960px) {
-    order: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-contents: center;
-    margin-bottom: 80px;
-  }
-
-  @media (max-width: 640px) {
-    margin-bottom: 30px;
-  }
-`;
-
-const Title = styled.div`
-  font-weight: 700;
-  font-size: 50px;
-  color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
-
-  @media (max-width: 960px) {
-    text-align: center;
-  }
-
-  @media (max-width: 960px) {
-    font-size: 40px;
-    line-height: 48px;
-    margin-bottom: 8px;
-  }
-`;
-
-const TextLoop = styled.div`
-  font-weight: 600;
-  font-size: 32px;
-  display: flex;
-  gap: 12px;
-  color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
-
-  @media (max-width: 960px) {
-    text-align: center;
-  }
-
-  @media (max-width: 960px) {
-    font-size: 22px;
-    line-height: 48px;
-    margin-bottom: 16px;
-  }
-`;
-
-const Span = styled.div`
-  cursor: pointer;
-  color: ${({ theme }) => theme.primary};
-`;
-
-const SubTitle = styled.div`
-  font-size: 20px;
-  line-height: 32px;
-  margin-bottom: 42px;
-  color: ${({ theme }) => theme.text_primary + 95};
-
-  @media (max-width: 960px) {
-    text-align: center;
-  }
-
-  @media (max-width: 960px) {
-    font-size: 16px;
-    line-height: 32px;
-  }
-`;
-
-const ResumeButton = styled.a`
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
-  text-decoration: none;
-
-  width: 95%;
-  max-width: 300px;
-  text-align: center;
-  padding: 16px 0;
-
-  background: hsla(271, 100%, 50%, 1);
-  background: linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  background: -moz-linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  box-shadow: 20px 20px 60px #1f2634, -20px -20px 60px #1f2634;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 20px;
-
-     &:hover {
-        transform: scale(1.05);
-    transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634,
-    filter: brightness(1);
-    }    
-    
-    
-    @media (max-width: 640px) {
-        padding: 12px 0;
-        font-size: 18px;
-    } 
-    color: white;
-`;
-
-const Img = styled.img`
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  max-width: 400px;
-  max-height: 400px;
-  border: 2px solid ${({ theme }) => theme.primary};
-
-  @media (max-width: 640px) {
-    max-width: 280px;
-    max-height: 280px;
-  }
-`;
-
-const HeroBg = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: end;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  max-width: 1360px;
-  overflow: hidden;
-  padding: 0 30px;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-
-  @media (max-width: 960px) {
-    justify-content: center;
-    padding: 0 0px;
-  }
-`;
-
-const Hero = () => {
+const HeroSection = () => {
   return (
-    <div id="About">
-      <HeroContainer>
-        <HeroBg>
-          <HeroBgAnimation />
-        </HeroBg>
+    <section className="mx-auto flex flex-col md:flex-row items-center justify-between min-h-screen pt-20 top-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-700 via-purple-800 to-purple-900 text-white relative overflow-hidden">
+      {/* Background SVG */}
+      <div className="absolute inset-0">
+        <svg
+          className="absolute top-10 left-10 w-64 h-64 opacity-20"
+          viewBox="0 0 200 200"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#ffffff"
+            d="M40.2,-69.6C51.5,-60.6,60.4,-50.4,65.7,-38.6C71.1,-26.8,72.9,-13.4,73.1,0.1C73.3,13.7,72,27.3,64.5,36.8C57,46.2,43.2,51.6,30,57.8C16.8,63.9,4.2,70.7,-9.4,72.2C-23,73.7,-46,69.9,-56.8,57.2C-67.6,44.4,-66.3,22.2,-68.8,-1.3C-71.3,-24.7,-77.5,-49.4,-67.5,-60.6C-57.4,-71.7,-31.2,-69.2,-8.4,-62.5C14.4,-55.7,28.9,-44.8,40.2,-69.6Z"
+            transform="translate(100 100)"
+          />
+        </svg>
+        <svg
+          className="absolute top-30 left-80 w-16 h-16 opacity-20"
+          viewBox="0 0 200 200"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#ffffff"
+            d="M40.2,-69.6C51.5,-60.6,60.4,-50.4,65.7,-38.6C71.1,-26.8,72.9,-13.4,73.1,0.1C73.3,13.7,72,27.3,64.5,36.8C57,46.2,43.2,51.6,30,57.8C16.8,63.9,4.2,70.7,-9.4,72.2C-23,73.7,-46,69.9,-56.8,57.2C-67.6,44.4,-66.3,22.2,-68.8,-1.3C-71.3,-24.7,-77.5,-49.4,-67.5,-60.6C-57.4,-71.7,-31.2,-69.2,-8.4,-62.5C14.4,-55.7,28.9,-44.8,40.2,-69.6Z"
+            transform="translate(100 100)"
+          />
+        </svg>
+        <svg
+          className="absolute top-60 left-70 w-24 h-24 opacity-20"
+          viewBox="0 0 200 200"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#ffffff"
+            d="M40.2,-69.6C51.5,-60.6,60.4,-50.4,65.7,-38.6C71.1,-26.8,72.9,-13.4,73.1,0.1C73.3,13.7,72,27.3,64.5,36.8C57,46.2,43.2,51.6,30,57.8C16.8,63.9,4.2,70.7,-9.4,72.2C-23,73.7,-46,69.9,-56.8,57.2C-67.6,44.4,-66.3,22.2,-68.8,-1.3C-71.3,-24.7,-77.5,-49.4,-67.5,-60.6C-57.4,-71.7,-31.2,-69.2,-8.4,-62.5C14.4,-55.7,28.9,-44.8,40.2,-69.6Z"
+            transform="translate(100 100)"
+          />
+        </svg>
+      </div>
+      <div className="mx-auto max-h-8/10  py-32 sm:py-48 lg:py-56">
+        <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+          {/* Left: Typing Animation & Description */}
+          {/* <div className="w-4/10 mx-2 md:w-1/2 text-left"> */}
 
-        <Title>
-          Hi, I am <br /> {'Devesh Patil'}
-        </Title>
-        <TextLoop>
-          I am a
-          <Span>
-            <Typewriter
-              options={{
-                strings: 'Developer of this Project',
-                autoStart: true,
-                loop: true,
-              }}
-            />
-          </Span>
-        </TextLoop>
+          <div className="text-center md:text-left md:w-1/2 relative z-10 px-8">
+            <h1 className="text-6xl font-bold mb-4 min-h-32">
+              <Typewriter
+                options={{
+                  strings: [
+                    "Welcome to Smruti-Pankha",
+                    "Your AI-Powered Solution",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </h1>
+            <p className="text-lg text-gray-200 mb-6">
+              Our innovative product integrates AI and IoT to provide seamless
+              solutions for Alzheimer's patients, ensuring better care and
+              safety.
+            </p>
+            <p className="text-lg text-gray-200 mb-6">
+              Our innovative product integrates AI and IoT to provide seamless
+              solutions for Alzheimer's patients, ensuring better care and
+              safety.
+            </p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <a
+                href="#"
+                className="rounded-md bg-indigo-300 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-300"
+              >
+                Get started
+              </a>
+              <a href="#" className="text-sm/6 font-semibold text-indigo-400">
+                Learn more <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
 
-        <SubTitle>{"Automated Alzhymer Assistence"}</SubTitle>
-
-        <Tilt>
-          <Img src={HeroImg} alt="Smruti-Pankha" />
-        </Tilt>
-      </HeroContainer>
-    </div>
+          {/* Right: 3D Model Placeholder */}
+          <div className="w-full md:w-1/2 h-96 bg-gray-300 rounded-lg flex items-center justify-center mt-10 md:mt-0 relative z-10">
+            <span className="text-gray-300">[3D Model Placeholder]</span>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default Hero;
+export default HeroSection;

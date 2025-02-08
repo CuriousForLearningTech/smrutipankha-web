@@ -1,48 +1,56 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import logo from "../assets/logo.png";
-import { div } from "framer-motion/client";
+
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Dashboard", href: "#" },
+  { name: "Projects", href: "#" },
+  { name: "About Us", href: "#" },
+  { name: "Features", href: "#" },
+  { name: "Team", href: "#" },
+  { name: "Contact Us", href: "#" },
 ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const Navbar = () => {
+  const [active, setActive] = useState("Dashboard");
+
   return (
-    <div className="nav max-w-7xl px-2 fixed top-0 bg-dark">
-      <div className="relative flex h-16 items-center justify-between">
-        <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-          <div className="flex shrink-0 items-center">
-            <img alt="Your Company" src={logo} className="h-8 w-auto" />
-          </div>
-          <div className="hidden sm:ml-6 sm:block">
-            <div className="flex space-x-4">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  aria-current={item.current ? "page" : undefined}
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "rounded-md px-3 py-2 text-sm font-medium"
-                  )}
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </div>
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-10/12 bg-purple-300 rounded-full p-3 shadow-lg z-50">
+      {/* <nav className="fixed top-0 left-1/2 transform -translate-x-1/2 w-8/12 bg-purple-300 rounded-b-full p-3 shadow-lg z-50"> */}
+      <div className="flex justify-between items-center">
+        {/* Left: Logo & Company Name */}
+        <div className="flex items-center space-x-3">
+          <img src={logo} alt="Logo" className="h-10 w-auto" />
+          <span className="text-purple-900 text-xl font-semibold">
+            Smruti-Pankha
+          </span>
+        </div>
+
+        {/* Center: Navigation Menu */}
+        <div className="hidden md:flex space-x-6">
+          {navigation.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              onClick={() => setActive(item.name)}
+              className={`text-sm font-medium px-3 py-1 rounded-full transition-all duration-300 ${
+                active === item.name
+                  ? "bg-purple-500 text-white"
+                  : "text-purple-700 hover:bg-purple-400 hover:text-white"
+              }`}
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+
+        {/* Right: Explore More Button */}
+        <div>
+          <button className="bg-purple-500 text-white px-4 py-2 rounded-full hover:bg-purple-600">
+            Explore More
+          </button>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
