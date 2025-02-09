@@ -1,5 +1,8 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import { Model } from "./loadmodel";
 
 const HeroSection = () => {
   return (
@@ -40,11 +43,11 @@ const HeroSection = () => {
           />
         </svg>
       </div>
-      <div className="mx-auto max-h-8/10  py-32 sm:py-48 lg:py-56">
+      <div className="mx-auto w-10/12 max-h-9/10  py-32 sm:py-48 lg:py-56">
         <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-          {/* Left: Typing Animation & Description */}
           {/* <div className="w-4/10 mx-2 md:w-1/2 text-left"> */}
 
+          {/* Left: Typing Animation & Description */}
           <div className="text-center md:text-left md:w-1/2 relative z-10 px-8">
             <h1 className="text-6xl font-bold mb-4 min-h-32">
               <Typewriter
@@ -82,8 +85,13 @@ const HeroSection = () => {
           </div>
 
           {/* Right: 3D Model Placeholder */}
-          <div className="w-full md:w-1/2 h-96 bg-gray-300 rounded-lg flex items-center justify-center mt-10 md:mt-0 relative z-10">
-            <span className="text-gray-300">[3D Model Placeholder]</span>
+          <div className="w-full md:w-1/2 h-96  rounded-lg flex items-center justify-center mt-10 md:mt-0 relative z-10">
+            <Canvas>
+              <OrbitControls />
+              <mesh>
+                <Model />
+              </mesh>
+            </Canvas>
           </div>
         </div>
       </div>
