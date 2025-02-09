@@ -1,12 +1,13 @@
-import React from "react";
+import React, { Suspense, useRef } from "react";
 import Typewriter from "typewriter-effect";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Stage } from "@react-three/drei";
 import { Model } from "./loadmodel";
 
 const HeroSection = () => {
+  const ref = useRef();
   return (
-    <section className="mx-auto flex flex-col md:flex-row items-center justify-between min-h-screen pt-20 top-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-700 via-purple-800 to-purple-900 text-white relative overflow-hidden">
+    <section className="mx-auto flex flex-col md:flex-row items-center justify-between min-h-screen pt-10 top-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-700 via-purple-800 to-purple-900 text-white relative overflow-hidden">
       {/* Background SVG */}
       <div className="absolute inset-0">
         <svg
@@ -43,6 +44,7 @@ const HeroSection = () => {
           />
         </svg>
       </div>
+
       <div className="mx-auto w-10/12 max-h-9/10  py-32 sm:py-48 lg:py-56">
         <div className="hidden sm:mb-8 sm:flex sm:justify-center">
           {/* <div className="w-4/10 mx-2 md:w-1/2 text-left"> */}
@@ -77,20 +79,35 @@ const HeroSection = () => {
                 className="rounded-md bg-indigo-300 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-300"
               >
                 Get started
-              </a>
-              <a href="#" className="text-sm/6 font-semibold text-indigo-400">
-                Learn more <span aria-hidden="true">→</span>
+                <span></span>
               </a>
             </div>
           </div>
 
           {/* Right: 3D Model Placeholder */}
-          <div className="w-full md:w-1/2 h-96  rounded-lg flex items-center justify-center mt-10 md:mt-0 relative z-10">
-            <Canvas>
-              <OrbitControls />
-              <mesh>
-                <Model />
-              </mesh>
+          <div className="w-full max-h-lvh md:w-1/2  rounded-lg flex items-center justify-center mt-10 md:mt-0 relative z-10">
+            <Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}>
+              <Suspense fallback={null}>
+                <ambientLight />
+                <spotLight
+                  intensity={0.9}
+                  penumbra={1}
+                  angle={0.1}
+                  position={[10, 15, 10]}
+                  castShadow
+                />
+                <Stage
+                  controls={ref}
+                  preset="portrait"
+                  intensity={1}
+                  environment="dawn"
+                >
+                  false
+                  <Model />
+                  false
+                </Stage>
+              </Suspense>
+              <OrbitControls ref={ref} autoRotate />
             </Canvas>
           </div>
         </div>

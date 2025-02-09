@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
+import {
+  BiSolidBrain,
+  BiCategoryAlt,
+  BiShapePolygon,
+  BiChalkboard,
+  BiSolidUserAccount,
+  BiSolidHandUp,
+} from "react-icons/bi";
 
 const navigation = [
-  { name: "Dashboard", href: "#" },
-  { name: "Projects", href: "#" },
-  { name: "About Us", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Team", href: "#" },
-  { name: "Contact Us", href: "#" },
+  { icons: <BiSolidBrain className="mx-2" />, name: "Dashboard", href: "#" },
+  { icons: <BiCategoryAlt className="mx-2" />, name: "Features", href: "#" },
+  { icons: <BiShapePolygon className="mx-2" />, name: "Milestones", href: "#" },
+  { icons: <BiChalkboard className="mx-2" />, name: "About Us", href: "#" },
+  {
+    icons: <BiSolidUserAccount className="mx-2" />,
+    name: "Contact Us",
+    href: "#",
+  },
 ];
 
 const Navbar = () => {
@@ -32,12 +43,13 @@ const Navbar = () => {
               key={item.name}
               href={item.href}
               onClick={() => setActive(item.name)}
-              className={`text-sm font-medium px-3 py-1 rounded-full transition-all duration-300 ${
+              className={`text-sm flex items-center font-medium px-3 py-2 rounded-full hover:scale-110 transition-all duration-300 ${
                 active === item.name
                   ? "bg-purple-500 text-white"
                   : "text-purple-700 hover:bg-purple-400 hover:text-white"
               }`}
             >
+              {item.icons}
               {item.name}
             </a>
           ))}
@@ -45,8 +57,9 @@ const Navbar = () => {
 
         {/* Right: Explore More Button */}
         <div>
-          <button className="bg-purple-500 text-white px-4 py-2 rounded-full hover:bg-purple-600">
-            Explore More
+          <button className="bg-purple-500 flex items-center text-white px-4 py-2 rounded-full hover:bg-purple-600">
+            <BiSolidHandUp className="mx-2 py-auto" />
+            Explore ✨ More
           </button>
         </div>
       </div>

@@ -12,8 +12,10 @@ import ResearchSection from "./components/Research";
 
 function App() {
   return (
-    <div>
-      <Navbar />
+    <div className="bg-purple-400">
+      <div>
+        <Navbar />
+      </div>
       <Hero />
       <FeaturesSection />
       <ResearchSection />

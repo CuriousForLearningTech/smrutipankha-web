@@ -1,12 +1,41 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { FaAward, FaFlask, FaLightbulb, FaUsers, FaCogs } from "react-icons/fa";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import logo from "../assets/logo.png";
+
+const Carousel = (images) => {
+  {
+    /* Swiper Carousel */
+  }
+  <Swiper
+    modules={[Pagination, Navigation, Autoplay]}
+    pagination={{ clickable: true }}
+    navigation
+    autoplay={{ delay: 3000 }}
+    className="mt-8 w-full max-w-3xl"
+  >
+    {images.map((image, index) => (
+      <SwiperSlide key={index} className="relative">
+        <div
+          className="h-64 flex items-center justify-center text-white text-center bg-cover bg-center rounded-lg shadow-lg"
+          style={{ backgroundImage: `url(${image})` }}
+        ></div>
+      </SwiperSlide>
+    ))}
+  </Swiper>;
+};
 
 const aboutData = [
   {
     icon: <FaUsers size={30} />,
     title: "Experience",
     description: "Years of expertise in AI-driven solutions.",
+    images: [],
   },
   {
     icon: <FaCogs size={30} />,
@@ -60,6 +89,8 @@ const AboutSection = () => {
                 <h3 className="text-xl font-semibold">{item.title}</h3>
                 <p className="text-gray-300">{item.description}</p>
               </div>
+              {/* { (item.images != None) <Carousel images={item.images} /> } */}
+              <div></div>
             </div>
             {/* Branch Line */}
             <div
