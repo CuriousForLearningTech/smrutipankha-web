@@ -1,45 +1,45 @@
 import React from "react";
 import { FaBrain, FaShieldAlt, FaMobileAlt, FaHeartbeat } from "react-icons/fa";
+import { FaMapLocationDot, FaEye } from "react-icons/fa6";
 
 const features = [
   {
     icon: <FaBrain size={40} />,
-    title: "AI-Powered Insights",
-    description:
-      "Leverage AI-driven analytics to monitor and improve patient care.",
+    title: "AI-Powered Assistance",
+    description: "Continuous tracking of patient activities and health data.",
   },
   {
     icon: <FaMobileAlt size={40} />,
-    title: "Seamless Connectivity",
+    title: "Medication Reminders",
     description:
       "Stay connected via mobile app for real-time updates.Ensuring the",
   },
   {
-    icon: <FaHeartbeat size={40} />,
-    title: "Health Monitoring",
+    icon: <FaMapLocationDot size={40} />,
+    title: "GeoFencing",
+    description:
+      "Track vital health parameters efficiently with smart sensors.",
+  },
+  {
+    icon: <FaEye size={40} />,
+    title: "Computer Vision",
     description:
       "Track vital health parameters efficiently with smart sensors.",
   },
   {
     icon: <FaHeartbeat size={40} />,
-    title: "Health Monitoring",
-    description:
-      "Track vital health parameters efficiently with smart sensors.",
-  },
-  {
-    icon: <FaHeartbeat size={40} />,
-    title: "Health Monitoring",
+    title: "CareGiver Support",
     description:
       "Track vital health parameters efficiently with smart sensors.",
   },
   {
     icon: <FaShieldAlt size={40} />,
-    title: "Enhanced Security",
+    title: "Natural Event Understanding",
     description: "Secure and encrypted data processing ensures user privacy.",
   },
   {
-    icon: <FaShieldAlt size={40} />,
-    title: "Enhanced Security",
+    icon: <FaHeartbeat size={40} />,
+    title: "Health Monitoring",
     description: "Secure and encrypted data processing ensures user privacy.",
   },
   {

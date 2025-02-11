@@ -7,7 +7,7 @@ import { Model } from "./loadmodel";
 const HeroSection = () => {
   const ref = useRef();
   return (
-    <section className="mx-auto flex flex-col md:flex-row items-center justify-between min-h-screen pt-10 top-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-700 via-purple-800 to-purple-900 text-white relative overflow-hidden">
+    <section className="mx-auto flex flex-col md:flex-row items-center justify-between min-h-screen pt-10 top-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500 text-slate-800 relative overflow-hidden">
       {/* Background SVG */}
       <div className="absolute inset-0">
         <svg
@@ -63,20 +63,17 @@ const HeroSection = () => {
                 }}
               />
             </h1>
-            <p className="text-lg text-gray-200 mb-6">
+            <p className="text-xl text-slate-700 mb-6">
               Our innovative product integrates AI and IoT to provide seamless
               solutions for Alzheimer's patients, ensuring better care and
-              safety.
-            </p>
-            <p className="text-lg text-gray-200 mb-6">
-              Our innovative product integrates AI and IoT to provide seamless
-              solutions for Alzheimer's patients, ensuring better care and
-              safety.
+              safety.Our innovative product integrates AI and IoT to provide
+              seamless solutions for Alzheimer's patients, ensuring better care
+              and safety.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="#"
-                className="rounded-md bg-indigo-300 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-300"
+                className="rounded-full bg-purple-500 px-4.5 py-2.5 text-xl font-semibold text-white shadow-xs hover:bg-purple-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-300"
               >
                 Get started
                 <span></span>

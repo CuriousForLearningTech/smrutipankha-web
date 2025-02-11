@@ -12,7 +12,7 @@ import ResearchSection from "./components/Research";
 
 function App() {
   return (
-    <div className="bg-purple-400">
+    <div className="bg-purple-50">
       <div>
         <Navbar />
       </div>
