@@ -1,41 +1,8 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import testnomi1 from "../assets/Team/testnomi1.png";
-import testnomi2 from "../assets/Team/testnomi2.png";
-import testnomi3 from "../assets/Team/testnomi3.png";
-import testnomi4 from "../assets/Team/testnomi4.png";
-
 import { motion } from "framer-motion";
 import { FaQuoteLeft } from "react-icons/fa";
-
-const testimonials = [
-  {
-    name: "Shivendoo Deshmukh",
-    feedback:
-      "This product has truly transformed my workflow! Highly recommend.",
-    avatar: testnomi1,
-  },
-  {
-    name: "Pranay Chandrikapure",
-    feedback:
-      "Incredible experience! The AI-powered features are a game changer.",
-    avatar: testnomi4,
-  },
-  {
-    name: "Durgesh Firake",
-    feedback: "A must-have for anyone looking for efficiency and accuracy.",
-    avatar: testnomi2,
-  },
-  {
-    name: "Prem Satpaise",
-    feedback: "A must-have for anyone looking for efficiency and accuracy.",
-    avatar: testnomi3,
-  },
-];
+import meta from "../Data/meta";
+const testimonials = meta.Testimonials || [];
 
 const Testimonials = () => {
   return (

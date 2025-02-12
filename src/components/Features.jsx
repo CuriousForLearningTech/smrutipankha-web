@@ -1,58 +1,14 @@
 import React from "react";
-import { FaBrain, FaShieldAlt, FaMobileAlt, FaHeartbeat } from "react-icons/fa";
-import { FaMapLocationDot, FaEye } from "react-icons/fa6";
-import { BiAccessibility, BiChip } from "react-icons/bi";
 
-const features = [
-  {
-    icon: <FaBrain size={40} />,
-    title: "AI-Powered Assistance",
-    description: "Continuous tracking of patient activities and health data.",
-  },
-  {
-    icon: <FaMobileAlt size={40} />,
-    title: "Medication Reminders",
-    description:
-      "Stay connected via mobile app for real-time updates.Ensuring the",
-  },
-  {
-    icon: <FaMapLocationDot size={40} />,
-    title: "GeoFencing",
-    description:
-      "Track vital health parameters efficiently with smart sensors.",
-  },
-  {
-    icon: <FaEye size={40} />,
-    title: "Computer Vision",
-    description:
-      "Track vital health parameters efficiently with smart sensors.",
-  },
-  {
-    icon: <BiAccessibility size={40} />,
-    title: "CareGiver Support",
-    description:
-      "Track vital health parameters efficiently with smart sensors.",
-  },
-  {
-    icon: <BiChip size={40} />,
-    title: "Natural Event Understanding",
-    description: "Secure and encrypted data processing ensures user privacy.",
-  },
-  {
-    icon: <FaHeartbeat size={40} />,
-    title: "Health Monitoring",
-    description: "Secure and encrypted data processing ensures user privacy.",
-  },
-  {
-    icon: <FaShieldAlt size={40} />,
-    title: "Enhanced Security",
-    description: "Secure and encrypted data processing ensures user privacy.",
-  },
-];
+import meta from "../Data/meta";
+const features = meta.Features || [];
 
 const FeaturesSection = () => {
   return (
-    <section className="w-8/12 mx-auto my-48 py-20 rounded-xl  bg-gradient-to-b from-purple-900 via-purple-800 to-purple-700 text-white relative overflow-hidden">
+    <section
+      id="features"
+      className="w-8/12 mx-auto my-48 py-20 rounded-xl  bg-gradient-to-b from-purple-600 via-purple-500 to-purple-400 text-white relative overflow-hidden"
+    >
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold">Key Features</h2>
         <p className="text-gray-300 mt-3">

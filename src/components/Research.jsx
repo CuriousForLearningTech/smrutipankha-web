@@ -7,16 +7,12 @@ import {
   FaArrowLeft,
   FaArrowRight,
 } from "react-icons/fa";
-import PaperOne from "../assets/research-papers/ResearchPaper1.pdf";
-import PaperTwo from "../assets/research-papers/ResearchPaper2.pdf";
-import RefPaper1 from "../assets/research-papers/ReferancePaper1.pdf";
-import RefPaper2 from "../assets/research-papers/ReferancePaper2.pdf";
-import RefPaper3 from "../assets/research-papers/ReferancePaper3.pdf";
 
+import meta from "../Data/meta";
 // Fix for worker issue in react-pdf
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
-const researchPapers = [PaperOne, PaperTwo, RefPaper1, RefPaper2, RefPaper3];
+const researchPapers = meta.ResearchPapers || [];
 
 const ResearchSection = () => {
   const [numPages, setNumPages] = useState(null);
@@ -45,7 +41,10 @@ const ResearchSection = () => {
   };
 
   return (
-    <section className="w-8/12 my-48 py-12 mx-auto rounded-4xl bg-purple-200 text-gray-900">
+    <section
+      id="Research"
+      className="w-8/12 my-48 py-12 mx-auto rounded-4xl bg-purple-200 text-gray-900"
+    >
       <div className="text-center">
         <h2 className="text-3xl font-bold text-purple-700">
           Research & Development
@@ -63,7 +62,7 @@ const ResearchSection = () => {
               className={`px-4 py-2 text-sm rounded shadow-md ${
                 pdf === currentPDF
                   ? "bg-purple-700 text-white"
-                  : "bg-gray-300 text-gray-900"
+                  : "bg-gray-200 text-gray-900"
               } hover:bg-purple-600`}
             >
               {index < 2

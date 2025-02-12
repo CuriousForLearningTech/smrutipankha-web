@@ -1,25 +1,10 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
-import {
-  BiSolidBrain,
-  BiCategoryAlt,
-  BiShapePolygon,
-  BiChalkboard,
-  BiSolidUserAccount,
-  BiSolidHandUp,
-} from "react-icons/bi";
+import { BiSolidHandUp } from "react-icons/bi";
 
-const navigation = [
-  { icons: <BiSolidBrain className="mx-2" />, name: "Dashboard", href: "#" },
-  { icons: <BiCategoryAlt className="mx-2" />, name: "Features", href: "#" },
-  { icons: <BiShapePolygon className="mx-2" />, name: "Milestones", href: "#" },
-  { icons: <BiChalkboard className="mx-2" />, name: "About Us", href: "#" },
-  {
-    icons: <BiSolidUserAccount className="mx-2" />,
-    name: "Contact Us",
-    href: "#",
-  },
-];
+import meta from "../Data/meta";
+
+const navigation = meta.navigation || [];
 
 const Navbar = () => {
   const [active, setActive] = useState("Dashboard");
@@ -57,7 +42,10 @@ const Navbar = () => {
 
         {/* Right: Explore More Button */}
         <div>
-          <button className="bg-purple-500 flex items-center text-white px-4 py-2 rounded-full hover:bg-purple-600">
+          <button
+            href="#Research"
+            className="bg-purple-500 flex items-center text-white px-4 py-2 rounded-full hover:bg-purple-600"
+          >
             <BiSolidHandUp className="mx-2 py-auto" />
             Explore ✨ More
           </button>
