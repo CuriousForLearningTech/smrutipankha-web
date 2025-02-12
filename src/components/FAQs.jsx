@@ -27,7 +27,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="w-10/12 mx-auto my-24 py-20 bg-gray-100 text-gray-900">
+    <section className="w-9/12 mx-auto my-48 py-20 rounded-xl border-2 border-cyan-400 bg-gray-100 text-gray-900">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold">FAQs</h2>
         <p className="text-gray-600 mt-3">

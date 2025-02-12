@@ -1,6 +1,7 @@
 import React from "react";
 import { FaBrain, FaShieldAlt, FaMobileAlt, FaHeartbeat } from "react-icons/fa";
 import { FaMapLocationDot, FaEye } from "react-icons/fa6";
+import { BiAccessibility, BiChip } from "react-icons/bi";
 
 const features = [
   {
@@ -27,13 +28,13 @@ const features = [
       "Track vital health parameters efficiently with smart sensors.",
   },
   {
-    icon: <FaHeartbeat size={40} />,
+    icon: <BiAccessibility size={40} />,
     title: "CareGiver Support",
     description:
       "Track vital health parameters efficiently with smart sensors.",
   },
   {
-    icon: <FaShieldAlt size={40} />,
+    icon: <BiChip size={40} />,
     title: "Natural Event Understanding",
     description: "Secure and encrypted data processing ensures user privacy.",
   },
@@ -51,7 +52,7 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="w-8/12 mx-auto my-32 py-20 rounded-xl  bg-gradient-to-b from-purple-900 via-purple-800 to-purple-700 text-white relative overflow-hidden">
+    <section className="w-8/12 mx-auto my-48 py-20 rounded-xl  bg-gradient-to-b from-purple-900 via-purple-800 to-purple-700 text-white relative overflow-hidden">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold">Key Features</h2>
         <p className="text-gray-300 mt-3">
@@ -59,18 +60,30 @@ const FeaturesSection = () => {
         </p>
       </div>
 
-      <div className="px-32">
-        <div className="grid grid-cols-1 items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto max-w-fit">
+      <div className="px-10 py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mx-auto">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="flex flex-col items-center bg-purple-700 bg-opacity-90 m-2 p-4 rounded-xl shadow-lg hover:scale-105 transition-transform w-4/12 sm:w-9/12 md:w-8/12 lg:w-12/12"
+              className="flex flex-col items-center justify-between bg-gradient-to-br from-purple-700 to-indigo-800 text-white p-4 rounded-xl shadow-lg hover:scale-105 transition-transform w-64 h-60 relative group"
             >
-              <div className="mb-4 text-indigo-300">{feature.icon}</div>
-              <h3 className="text-2xl text-center font-semibold mb-2">
+              {/* Icon with Glow Effect */}
+              <div className="mb-1 text-indigo-300 text-5xl group-hover:text-indigo-400 transition-all duration-300">
+                {feature.icon}
+              </div>
+
+              {/* Title with Elegant Styling */}
+              <h3 className="text-xl font-semibold text-center">
                 {feature.title}
               </h3>
-              <p className="text-gray-300 text-center">{feature.description}</p>
+
+              {/* Description */}
+              <p className="text-gray-300 text-center text-sm opacity-90 px-2">
+                {feature.description}
+              </p>
+
+              {/* Soft Glow on Hover */}
+              <div className="absolute inset-0 rounded-xl bg-purple-500 opacity-0 group-hover:opacity-20 transition-all duration-300"></div>
             </div>
           ))}
         </div>

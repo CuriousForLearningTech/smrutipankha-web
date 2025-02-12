@@ -19,7 +19,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="w-10/12 mx-auto py-20 bg-gray-900 text-white">
+    <section className="w-6/12 mx-auto my-48 py-20 rounded-xl bg-gray-900 text-white">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold">Contact Us</h2>
         <p className="text-gray-300 mt-3">We'd love to hear from you!</p>

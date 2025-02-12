@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const HowItWorks = () => {
   return (
-    <section className="w-10/12 mx-auto my-8 py-20 bg-gray-100 text-gray-900 relative overflow-hidden">
+    <section className="w-9/12 mx-auto my-8 py-20 rounded-xl border-2 border-cyan-400 bg-gray-100 text-gray-900 relative overflow-hidden">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold">How It Works</h2>
         <p className="text-gray-600 mt-3">
