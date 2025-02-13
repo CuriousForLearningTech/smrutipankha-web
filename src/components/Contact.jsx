@@ -21,13 +21,13 @@ const ContactForm = () => {
   return (
     <section
       id="contact-us"
-      className="w-6/12 mx-auto my-48 py-20 rounded-xl bg-gray-900 text-white"
+      className="md:w-1/2 md:mx-auto my-48 py-20 md:rounded-xl bg-gray-900 text-white"
     >
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold">Contact Us</h2>
         <p className="text-gray-300 mt-3">We'd love to hear from you!</p>
       </div>
-      <form className="max-w-lg mx-auto space-y-6">
+      <form className="max-w-lg mx-8 md:mx-auto space-y-6">
         {["Name", "Email", "Message"].map((field) => (
           <div key={field} className="relative">
             {fieldIcons[field]}

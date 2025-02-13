@@ -27,14 +27,14 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="w-9/12 mx-auto my-48 py-20 rounded-xl border-2 border-purple-400 bg-gray-100 text-gray-900">
+    <section className="w-11/12 md:w-9/12 mx-auto my-48 py-20 rounded-xl border-2 border-purple-400 bg-gray-100 text-gray-900">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold">FAQs</h2>
         <p className="text-gray-600 mt-3">
           Common questions and answers to help you out.
         </p>
       </div>
-      <div className="max-w-3xl mx-auto space-y-4">
+      <div className="max-w-sm md:max-w-3xl mx-1 md:mx-auto space-y-4">
         {faqs.map((faq, index) => (
           <div key={index} className="bg-white p-4 rounded-lg shadow-md">
             <div

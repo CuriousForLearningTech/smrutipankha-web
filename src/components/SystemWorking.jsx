@@ -5,7 +5,7 @@ const HowItWorks = () => {
   return (
     <section
       id="about-us"
-      className="w-9/12 mx-auto my-8 py-20 rounded-xl border-2 border-purple-400 bg-gray-100 text-gray-900 relative overflow-hidden"
+      className="md:w-9/12 mx-2 md:mx-auto my-8 py-20 rounded-xl border-2 border-purple-400 bg-gray-100 text-gray-900 relative overflow-hidden"
     >
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold">How It Works</h2>
@@ -16,7 +16,7 @@ const HowItWorks = () => {
 
       {/* Architecture Box */}
       <motion.div
-        className="mx-auto w-10/12 md:w-8/12 h-96 bg-gray-800 rounded-lg flex items-center justify-center shadow-lg relative"
+        className="mx-auto w-10/12 md:w-8/12 h-56 md:h-96 bg-gray-800 rounded-lg flex items-center justify-center shadow-lg relative"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}

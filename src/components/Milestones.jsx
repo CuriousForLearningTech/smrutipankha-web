@@ -14,7 +14,7 @@ const AboutSection = () => {
   return (
     <section
       id="milestones"
-      className="w-9/12 mx-auto my-48 py-10 rounded-4xl bg-gray-900 text-white relative overflow-hidden"
+      className="md:w-9/12 mx-auto my-48 py-10 rounded-2xl md:rounded-4xl bg-gray-900 text-white relative overflow-hidden"
     >
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold">Milestones</h2>
@@ -25,19 +25,20 @@ const AboutSection = () => {
 
       <div className="relative flex flex-col items-center">
         {/* Central Line */}
-        <div className="absolute w-1 h-full bg-purple-500 top-0 left-1/2 transform -translate-x-1/2"></div>
+        <div className="absolute w-1 h-full bg-purple-500 top-0 left-1/2 transform -translate-x-1/2 hidden md:block"></div>
+
         {/* Content */}
         {aboutData.map((item, index) => (
           <motion.div
             key={index}
-            className={`flex items-center w-full max-w-6xl my-4 ${
+            className={`flex items-center w-full md:max-w-6xl my-4 ${
               index % 2 === 0 ? "justify-start" : "justify-end"
             }`}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
-            <div className="grid grid-flow-col grid-rows-2 bg-gray-800 p-6 rounded-lg shadow-lg w-120 field-sizing-content">
+            <div className="mx-4 border-2 grid grid-flow-col grid-rows-2 bg-gray-800 p-6 rounded-lg shadow-lg w-120 field-sizing-content">
               <div className="field-sizing-content">
                 <div className="text-purple-300">{item.icon}</div>
                 <div>

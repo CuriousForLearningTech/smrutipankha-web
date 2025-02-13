@@ -12,12 +12,12 @@ const HeroSection = () => {
   return (
     <section
       id="dashboard"
-      className="relative mx-auto flex flex-col rounded-b-[40%] md:rounded-b-[18%] md:flex-row items-center justify-between min-h-screen pt-10 top-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500  shadow-2xl shadow-fuchsia-700/50 text-slate-800 overflow-hidden"
+      className="relative mx-auto min-w-screen flex flex-col-reverse rounded-b-[4%] md:rounded-b-[14%] md:flex-row items-center justify-between min-h-screen pt-10 bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500 shadow-2xl shadow-fuchsia-700/50 text-slate-800 overflow-hidden"
     >
       {/* Background SVG */}
       <div className="absolute inset-0">
         <svg
-          className="absolute top-10 left-10 w-64 h-64 opacity-20 animate-pulse"
+          className="absolute md:w-64 md:h-64 w-24 h-24 top-10 left-10   opacity-20 animate-pulse"
           viewBox="0 0 200 200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -29,20 +29,18 @@ const HeroSection = () => {
         </svg>
       </div>
 
-      <div className="mx-auto w-10/12 max-h-9/10  py-32 sm:py-48 lg:py-56">
-        <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-          {/* <div className="w-4/10 mx-2 md:w-1/2 text-left"> */}
-
+      <div className="mx-auto md:w-10/12 md:max-h-9/10 py-24 md:py-32 lg:py-34">
+        <div className="md:mb-4 md:flex justify-center">
           {/* Left: Typing Animation & Description */}
           <div className="text-center md:text-left md:w-1/2 relative z-10 px-8">
-            <h1 className="text-8xl font-bold mb-4 min-h-32">
+            <h1 className="text-6xl md:text-8xl font-bold mb-4 min-h-32">
               {HeroData.heading}
             </h1>
             <p className="text-xl text-slate-700 mb-6">{HeroData.subheading}</p>
-            <div className="mt-10 flex  gap-x-6">
+            <div className="mt-10 sm:justify-center md:flex gap-x-6">
               <a
                 href="#"
-                className="rounded-full bg-purple-500 px-4.5 py-2.5 text-xl font-semibold text-white shadow-xs hover:bg-purple-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-300"
+                className="rounded-full bg-purple-500 px-4.5 py-2.5 md:text-xl font-semibold text-white shadow-xs hover:bg-purple-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-300"
               >
                 {HeroData.buttonText}
               </a>
@@ -50,7 +48,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right: 3D Model Placeholder */}
-          <div className="w-full max-h-lvh md:w-1/2  rounded-lg flex items-center justify-center mt-10 md:mt-0 relative z-10">
+          <div className="w-full min-h-96 max-h-lvh md:w-1/2  rounded-lg flex items-center justify-center mt-10 md:mt-0 relative z-10">
             <Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}>
               <Suspense fallback={null}>
                 <ambientLight />

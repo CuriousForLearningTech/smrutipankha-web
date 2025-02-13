@@ -12,7 +12,7 @@ import ResearchSection from "./components/Research";
 
 function App() {
   return (
-    <div className="bg-purple-50">
+    <div className="bg-purple-80 w-full min-h-screen overflow-hidden">
       <div>
         <Navbar />
       </div>

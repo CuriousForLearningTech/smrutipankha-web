@@ -43,23 +43,23 @@ const ResearchSection = () => {
   return (
     <section
       id="Research"
-      className="w-8/12 my-48 py-12 mx-auto rounded-4xl bg-purple-200 text-gray-900"
+      className="md:w-8/12 my-48 py-12 mx-auto md:rounded-4xl bg-purple-200 text-gray-900"
     >
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-purple-700">
+        <h2 className="text-2xl md:text-3xl font-bold text-purple-700">
           Research & Development
         </h2>
-        <p className="mt-2 text-lg text-gray-600">
+        <p className="mt-2 text-md md:text-lg text-gray-600">
           Explore our latest research work in AI & IoT for healthcare solutions.
         </p>
 
         {/* PDF Selection */}
-        <div className="mt-4 flex justify-center gap-4">
+        <div className="mx-4 mt-4 flex justify-center gap-1 md:gap-4">
           {researchPapers.map((pdf, index) => (
             <button
               key={index}
               onClick={() => handlePDFChange(pdf)}
-              className={`px-4 py-2 text-sm rounded shadow-md ${
+              className={`md:px-4 py-2 text-sm rounded shadow-md ${
                 pdf === currentPDF
                   ? "bg-purple-700 text-white"
                   : "bg-gray-200 text-gray-900"
@@ -73,8 +73,8 @@ const ResearchSection = () => {
         </div>
 
         {/* PDF Viewer */}
-        <div className="mt-8 flex flex-col items-center">
-          <div className="relative shadow-md rounded-lg w-full max-w-4xl bg-white p-4 overflow-hidden">
+        <div className="mx-4 mt-8 flex flex-col items-center">
+          <div className="relative shadow-md rounded-lg w-full md:max-w-4xl bg-white p-4 overflow-hidden">
             {loading && <p className="text-gray-500">Loading PDF...</p>}
             {error && <p className="text-red-500">Failed to load PDF.</p>}
 

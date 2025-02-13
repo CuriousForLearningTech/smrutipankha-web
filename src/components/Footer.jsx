@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/logo.png";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
@@ -7,7 +8,10 @@ const Footer = () => {
       <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Logo & Tagline */}
         <div>
-          <h2 className="text-2xl font-bold text-white">Smruti-Pankha</h2>
+          <div className="flex items-center space-x-3">
+            <img src={logo} alt="Logo" className="h-10 w-auto" />
+            <span className="text-2xl font-bold text-white">Smruti-Pankha</span>
+          </div>
           <p className="mt-2 text-sm text-gray-400">
             Empowering lives with AI-driven solutions.
           </p>
