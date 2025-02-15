@@ -62,7 +62,7 @@ const Carousel = ({ images }) => {
                 <img
                   src={image}
                   alt={`Slide ${index}`}
-                  className="max-h-[90vh] max-w-[90vw] object-contain mx-auto"
+                  className="max-h-[90vh] max-w-[90vw] object-contain mx-auto my-auto"
                 />
               </SwiperSlide>
             ))}

@@ -1,24 +1,8 @@
 import React, { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import meta from "../Data/meta";
 
-const faqs = [
-  {
-    question: "What is Smruti-Pankha?",
-    answer:
-      "Smruti-Pankha is an AI-powered solution designed to assist users with intelligent features and automation.",
-  },
-  {
-    question: "How does it work?",
-    answer:
-      "It utilizes advanced AI algorithms to analyze data and provide real-time insights and recommendations.",
-  },
-  {
-    question: "Is my data secure?",
-    answer:
-      "Yes, we prioritize security and employ encryption protocols to protect user data.",
-  },
-];
-
+const faqs = meta.FAQs || [];
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
 

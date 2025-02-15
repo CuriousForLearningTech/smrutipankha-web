@@ -22,7 +22,6 @@ import RefPaper3 from "../assets/research-papers/ReferancePaper3.pdf";
 // images
 import Reserch1 from "../assets/Events/Research1.jpg";
 import Reserch2 from "../assets/Events/Research2.jpg";
-import Reserch3 from "../assets/Events/Research3.jpg";
 import Guide1 from "../assets/Events/Guidence1.jpeg";
 import Guide2 from "../assets/Events/Guidence1.jpeg";
 import GovGuest1 from "../assets/Events/GovernmentGuest1.jpg";
@@ -71,7 +70,7 @@ const meta = {
     },
   ],
   heroSection: {
-    heading: "Smruti-Pankha: An Automated Alzheimer Assistence",
+    heading: "Smruti-Pankha: An Automated Alzheimer Assistance",
     subheading: "Your Companion in Memory Care",
     buttonText: "Let's Get-started ✨",
   },
@@ -145,7 +144,7 @@ const meta = {
       title: "Published Research at an International Conference",
       description:
         "We are proud to have our research published at the International Conference on Application of Engineering for Sustainable Development. Two of our papers, authored by Borakhade et al. and Patil et al., are now live on [www.isteonline.in]. This milestone marks a significant step in our commitment to engineering innovation for a sustainable future!",
-      Images: [Reserch1, Reserch2, Reserch3],
+      Images: [Reserch1, Reserch2],
     },
     {
       icon: <FaCogs size={30} />,
@@ -184,6 +183,18 @@ const meta = {
       name: "Prem Satpaise",
       feedback: "A must-have for anyone looking for efficiency and accuracy.",
       avatar: testnomi3,
+    },
+  ],
+  FAQs: [
+    {
+      question: "What is Smruti-Pankha?",
+      answer:
+        "Smruti-Pankha is an AI-powered solution designed to assist users with intelligent features and automation.",
+    },
+    {
+      question: "How does it work?",
+      answer:
+        "It utilizes advanced AI algorithms to analyze data and provide real-time insights and recommendations.",
     },
   ],
 };
