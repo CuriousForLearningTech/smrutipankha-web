@@ -1,15 +1,28 @@
-# Smruti-Pankha
+### **📌 Project Name: Smruti-Pankha  🚀**
 
-Hi! I'm one of the developer like you and this is our project to show case our model and stay information about our project.
+  
 
-## this site is in under development so you need to wait for it.
+#### **📝 Introduction**  
 
-## Steps to View UI
+Smruti-Pankha is an **AI-powered IoT solution** designed to assist individuals, particularly **Alzheimer's patients**, by providing real-time monitoring, cognitive support, and seamless communication with caregivers. This project integrates **wearable technology, AI-based data analysis, and an intuitive user interface** to enhance the quality of life for patients and ease the burden on caregivers.
 
-Step 1 : `Download the github repo ` or ` git clone https://github.com/CuriousForLearningTech/smrutipankha-web.git`
+#### **💡 What We Are Doing**  
 
-Step 2 : `cd smrutipankha-web`
+We are building a **modern, responsive web application** to display information about **Smruti-Pankha** and engage with users. The website includes:  
 
-Step 3 : `npm install`
+✔ **An interactive homepage** showcasing the product.   
+✔ **Animations & UI enhancements** using **Framer Motion** and **React Icons**.  
+✔ **A mobile-friendly design** with optimized layouts for different screen sizes.  
 
-Step 4 : `npm run Dev`
+#### **🛠️ Tech Stack**  
+
+* **Frontend:** React.js, Tailwind CSS, Framer Motion  
+* **Styling:** Tailwind CSS, Responsive Design  
+* **UI Enhancements:** Motion effects, Icon support  
+* **Deployment:** To be decided  
+
+#### **📸 Current Progress**  
+
+* ✅ **Navbar & Hero Section** completed  
+* ✅ **Testimonials Section** redesigned for full responsiveness  
+* ⏳ **More sections in progress...**  
